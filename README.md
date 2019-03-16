@@ -35,8 +35,13 @@
 
 |Column|Type|Options|
 |------|----|-------|
+<<<<<<< HEAD
 |user_id|refference|null: false, foreign_key: true|
 |group_id|refference|null: false, foreign_key: true|
+=======
+|user_id|integer|null: false, foreign_key: true|
+|group_id|integer|null: false, foreign_key: true|
+>>>>>>> master
 
 ### Association
 - belongs_to :group

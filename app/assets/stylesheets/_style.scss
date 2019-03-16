@@ -45,23 +45,20 @@
   }
 }
 
-.groups{
+.group-list{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-}
-
-.group{
+  &__box{
     padding: 20px;
-    color: white;
     font-weight: bold;
     color: #FFFFFF;
-
-  &__group-name{
-      font-size: 15px;
-      margin-bottom: 5px;
-  }
-  &__latest-message{
-      font-size: 11px;
+    &__group-name{
+          font-size: 15px;
+          margin-bottom: 5px;
+    }
+    &__latest-message{
+          font-size: 11px;
+    }
   }
 }
 
@@ -104,7 +101,7 @@
     margin-top: 28px;
 }
 
-.messages{
+.message-list{
     height: calc(100vh - 195px);
     padding: 46px 40px;
     background-color: #fafafa;

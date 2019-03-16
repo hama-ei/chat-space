@@ -1,19 +1,9 @@
-html,body{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-.wrapper{
-    box-sizing: border-box;
-    color: #000;
-    width: 100%;
-    height: 100%;
-}
 .chat-side{
     width: 300px;
     color: white;
     float: left;
+    margin: 0;
+    padding: 0;
 }
 
 .side-header{
@@ -28,12 +18,10 @@ html,body{
     font-weight: bold;
   &__box{
       display: flex;
-      wight: 24px;
       justify-content: space-between;
-      width: 100%;
+      width: 100vw;
       font-weight: bold;
       color: white;
-      padding: 0;
     &__user-name{
         display: flex;
         margin: 0;
@@ -60,11 +48,10 @@ html,body{
 .groups{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-    padding: 20px 20px 0;
 }
 
 .group{
-    margin-bottom: 40px;
+    padding: 20px;
     color: white;
     font-weight: bold;
     color: #FFFFFF;
@@ -81,7 +68,6 @@ html,body{
 .chat-main{
     width: calc(100vw - 300px);
     float: left;
-    height: 100vh;
 }
 
 .main-header{
@@ -119,7 +105,7 @@ html,body{
 }
 
 .messages{
-    height: calc(100vh - 170px);
+    height: calc(100vh - 195px);
     padding: 46px 40px;
     background-color: #fafafa;
     box-sizing: border-box;
@@ -151,70 +137,54 @@ html,body{
 }
 
 .form{
-    height: 90px;
     padding: 0px 40px;
     background-color: #ddd;
-    display: block;
     box-sizing: border-box;
-    position: absolute;
-    right: 0px;
     width: calc(100vw - 300px);
-    bottom: -20px;
+    right: 0;
 }
 .new_message{
     color: #000;
     display: flex;
-    margin: 0px;
     padding: 20px;
-    box-sizing: border-box;
 }
 
 .input-box{
     position: relative;
-    width: 100%;
-    margin: ;
-    padding: 0;
-    box-sizing: inline;
+    width: 100vw;
     color: #000;
   &__text{
       height: 50px;
       width: 100%;
       padding: 10 40px 0 10px;
       color: #434a54;
-      font-family: inherit;
       font-size: 16px;
-      font-weight: inherit;
       background-color: white;
       color: initial;
       text-indent: 10px;
-      text-align: start;
+  }
   &__image{
       font-size: 1.3rem;
       position: absolute; right: 10px;
       top: 10px;
       right: 10px;
       cursor: pointer;
-  }
+    &__file{
+        display: none;
+    }
   }
 }
 
 .fa.fa-image.fa-lg{
   cursor: pointer;
-  padding: 10px;
-  right: 100px;
 
 
 
 }
 .submit-btn{
-    width: 100px;
-    height: 50px;
     padding: 0 30px;
     margin-left: 15px;
     background-color: #38aef0;
     color: white;
     cursor: pointer;
-    border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-    border-style: solid;
-    border-width: 1px;
 }

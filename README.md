@@ -35,7 +35,6 @@
 
 |Column|Type|Options|
 |------|----|-------|
-<<<<<<< HEAD
 |user_id|refference|null: false, foreign_key: true|
 |group_id|refference|null: false, foreign_key: true|
 

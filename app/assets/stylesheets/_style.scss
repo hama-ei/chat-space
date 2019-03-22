@@ -1,6 +1,7 @@
 .chat-main{
     width: calc(100vw - 300px);
     float: left;
+    height: 100%;
 }
 
 .main-header{
@@ -37,8 +38,8 @@
     margin-top: 28px;
 }
 
-.messagelist{
-    height: calc(100vh - 195px);
+.messages{
+    height: calc(100vh - 170px);
     padding: 46px 40px;
     background-color: #fafafa;
     box-sizing: border-box;
@@ -70,54 +71,47 @@
 }
 
 .form{
-    padding: 0px 40px;
+    height: 90px;
+    padding: 20px 40px;
     background-color: #ddd;
     box-sizing: border-box;
     width: calc(100vw - 300px);
     right: 0;
-}
-.new_message{
-    color: #000;
-    display: flex;
-    padding: 20px;
-}
+    bottom: 0;
+  &__mask{
 
-.input-box{
-    position: relative;
-    width: 100vw;
-    color: #000;
-  &__text{
-      height: 50px;
-      width: 100%;
-      padding: 10 40px 0 10px;
-      color: #434a54;
-      font-size: 16px;
-      background-color: white;
-      color: initial;
-      text-indent: 10px;
   }
-  &__image{
-      font-size: 1.3rem;
-      position: absolute; right: 10px;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-    &__file{
-        display: none;
-    }
-  }
-}
-
-.fa.fa-image.fa-lg{
-  cursor: pointer;
-
-
-
-}
-.submit-btn{
+  &__submit{
     padding: 0 30px;
     margin-left: 15px;
     background-color: #38aef0;
     color: white;
     cursor: pointer;
+  }
 }
+
+.new_message{
+    color: black;
+    display: flex;
+    height: 50px;
+    width: 100%;
+}
+
+
+.imput__image{
+    color: black;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+  .hidden{
+        display: none;
+}
+
+  .icon{
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+}
+

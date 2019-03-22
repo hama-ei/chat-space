@@ -1,6 +1,5 @@
 .wrapper
   = render 'shared/side_bar'
-
   .chat-main
     .main-header
       .main-header__left-box
@@ -12,16 +11,14 @@
         %a{href: "/groups/27/edit"}
           .main-header__edit-btn Edit
 
-    .messagelist
-      = render 'message'
+    .messages
+      = render @message
 
     .form
-      %form#new_message.new_message{"accept-charset": "UTF-8", action: "/groups/651/messages", enctype: "multipart/form-data", method: "post"}
-        %input{name: "utf8", type: "hidden", value: "✓"}/
-        %input{name: "authenticity_token", type: "hidden", value: "LSEhtCWAjhH69ycKYMIVlcXUhzgmjF0n1NvOMlYCfxrB3KH5MAZgyLvoiQfqUs24JMIRiv8ypj5o8XOvDKIKSw=="}/
-        .input-box
-          %input#message_content.input-box__text{ name: "message[content]", placeholder: "type a message", type: "text"}/
-          %label.input-box__image{ for: "message_image"}
-            %i.fa.fa-image.fa-lg
-            %input#message_image.input-box__image__file{ name: "message[image]", type: "file"}/
-        %input.submit-btn{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'new_message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'imput__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'

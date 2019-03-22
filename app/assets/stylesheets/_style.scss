@@ -79,39 +79,33 @@
     right: 0;
     bottom: 0;
   &__mask{
-
+      color: black;
   }
   &__submit{
-    padding: 0 30px;
-    margin-left: 15px;
-    background-color: #38aef0;
-    color: white;
-    cursor: pointer;
+      padding: 0 30px;
+      margin-left: 15px;
+      background-color: #38aef0;
+      color: white;
+      cursor: pointer;
   }
 }
 
 .new_message{
-    color: black;
     display: flex;
     height: 50px;
     width: 100%;
 }
 
-
 .imput__image{
-    color: black;
     top: 10px;
     right: 10px;
-    cursor: pointer;
 }
 
-  .hidden{
+.hidden{
         display: none;
 }
 
-  .icon{
-    font-size: 1.3rem;
-    color: white;
+.icon{
     cursor: pointer;
 }
 

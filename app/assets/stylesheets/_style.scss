@@ -1,7 +1,7 @@
 .chat-main{
     width: calc(100vw - 300px);
     float: left;
-    height: 100%;
+    height: 100vh;
 }
 
 .main-header{
@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     border-bottom: solid 1px #eee;
-    overflow: scroll;
   &__left-box{
       margin-top: 35px;
     &__current-group{
@@ -43,6 +42,7 @@
     padding: 46px 40px;
     background-color: #fafafa;
     box-sizing: border-box;
+    overflow: scroll;
 }
 
 .message{
@@ -78,9 +78,6 @@
     width: calc(100vw - 300px);
     right: 0;
     bottom: 0;
-  &__mask{
-
-  }
   &__submit{
     padding: 0 30px;
     margin-left: 15px;
@@ -91,27 +88,30 @@
 }
 
 .new_message{
-    color: black;
     display: flex;
     height: 50px;
     width: 100%;
-}
-
-
-.imput__image{
-    color: black;
-    top: 10px;
-    right: 10px;
+  &__box{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    &__mask{
+    font-size: 1.3rem;
+    right: 40px;
     cursor: pointer;
+    margin: auto;
+    position: relative;
+    }
+  }
 }
 
   .hidden{
-        display: none;
+    display: none;
 }
 
-  .icon{
+.image-icon{
     font-size: 1.3rem;
-    color: white;
     cursor: pointer;
+    color: black;
 }
 

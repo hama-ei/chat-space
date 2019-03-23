@@ -5,6 +5,8 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @messages = @group.messages.includes(:user)
+    #表示したいgroupに所属しているuserは@group.usersとすると取得することができます。多対多のテーブルのアソシエーションの場合はこのようにアソシエーションするモデル(ここではuser)を取得できます。
+    @users = @group.users
   end
 
   def create
@@ -26,5 +28,6 @@ class MessagesController < ApplicationController
 
   def set_group
     @group = Group.find(params[:group_id])
+    @members = @group.user_ids
   end
 end

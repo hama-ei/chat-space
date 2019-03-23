@@ -5,20 +5,21 @@
       .main-header__left-box
         %h2
         .main-header__left-box__current-group
-          Test
-        %ul.main-header__left-box__member-list
-          Member：Test
-        %a{href: "/groups/27/edit"}
-          .main-header__edit-btn Edit
-
+          =@group.name
+        .main-header__left-box__member-list
+          Member :
+          - @users.each do |user|
+            #{user.name}
+          %a{href: "/groups/#{@group.id}/edit"}
+            .main-header__edit-btn Edit
     .messages
-      = render @message
+      = render @messages
 
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'new_message', placeholder: '  type a message'
-        .form__mask
+        = f.text_field :content, class: 'new_message__box', placeholder: '  type a message'
+        .new_message__box__mask
           = f.label :image, class: 'imput__image' do
-            = fa_icon 'picture-o', class: 'icon'
+            = fa_icon 'picture-o', class: 'image-icon'
             = f.file_field :image, class: 'hidden'
         = f.submit 'Send', class: 'form__submit'

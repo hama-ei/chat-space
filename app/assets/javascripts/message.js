@@ -21,7 +21,9 @@ $(function(){
                 </div>`
     return html;
   }
-
+  function scroll() {
+    $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'last');
+  }
   $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -38,6 +40,7 @@ $(function(){
       var html = buildHTML(data);
       $('.messages').append(html)
       $('.new_message__box').val('')
+      scroll()
     })
     .fail(function(){
       alert('error');

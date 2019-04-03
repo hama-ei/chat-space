@@ -41,6 +41,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
+  gem 'faker'
 end
 
 group :development do
@@ -65,6 +66,3 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 
-group :test do
-  gem 'faker'
-end

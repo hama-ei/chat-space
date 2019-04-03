@@ -17,7 +17,7 @@
 
     .form
       = form_for [@group, @message] do |f|
-        = f.text_field :content, class: 'new_message__box', placeholder: '  type a message'
+        = f.text_field :content, class: 'new_message__box', placeholder: '  type a message', id: 'new_message'
         .new_message__box__mask
           = f.label :image, class: 'imput__image' do
             = fa_icon 'picture-o', class: 'image-icon'

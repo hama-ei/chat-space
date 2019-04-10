@@ -8,6 +8,13 @@ $(function() {
     $("#user-search-result").append(html);
   };
 
+  function appendErrMsgToHTML(msg) {
+    var html = `<p>
+                  <div class="chat-group-user clearfix">${ msg }</div>
+                </p>`
+    $("#user-search-result").append(html);
+  };
+
   function changeUser(user_id,user_name) {
     var html =`<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
                 <input name='group[user_ids][]' type='hidden' value="${user_id}">
@@ -32,6 +39,9 @@ $(function() {
         users.forEach(function(user){
          appendUser(user);
         });
+      }
+      else {
+        appendErrMsgToHTML("一致するメンバーはいません");
       }
     })
    .fail(function() {

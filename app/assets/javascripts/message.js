@@ -124,9 +124,7 @@ var buildMessageHTML = function(message) {
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       messages.forEach(function(message) {
-        if (message.id > last_message_id) {
-          insertHTML += buildHTML(message);
-        }
+        insertHTML += buildHTML(message);
       });
       //メッセージが入ったHTMLを取得
       $('.messages').append(insertHTML);

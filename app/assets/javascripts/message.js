@@ -39,8 +39,8 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html)
-      $('.new_message__box').val('')
-      $('.hidden').val('')
+      $('.new_message__box').reset()
+      $('.hidden').reset()
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
     .fail(function(){

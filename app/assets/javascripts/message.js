@@ -4,7 +4,7 @@ $(function(){
     var image = message.image.url ? `<img src= ${ message.image.url }>` : "";
 
     var html = `<div class='message'>
-                  <section data-author=${message.user_name} data-create-at=${message.created_at} data-id=${message.id}>
+                  <section data-id=${message.id}>
                     <div class='message__upper-info'>
                       <div class='message__upper-info__talker'>
                         ${message.user_name}
@@ -56,22 +56,22 @@ var buildMessageHTML = function(message) {
   var image = message.image.url ? `<img src= ${ message.image.url }>` : "";
 
       //data-idが反映されるようにしている
-      var html = '<div class="message" data-id=' + message.id + '>' +
-        '<div class="upper-message">' +
-          '<div class="upper-message__user-name">' +
-            message.user_name +
-          '</div>' +
-          '<div class="upper-message__date">' +
-            message.created_at +
-          '</div>' +
-        '</div>' +
-        '<div class="lower-message">' +
-          '<p class="lower-message__content">' +
-            message.content +
-          '</p>' +
-          '<img src="' + message.image.url + '" class="lower-message__image" >' +
-        '</div>' +
-      '</div>'
+      var html = `<div class="message" data-id='message.id'>
+                    <div class="upper-message">
+                      <div class="upper-message__user-name">
+                        message.user_name
+                      </div>
+                      <div class="upper-message__date">
+                        message.created_at
+                      </div>
+                    </div>
+                    <div class="lower-message">'
+                      <p class="lower-message__content">
+                         message.content
+                       </p>
+                      <img src="' + message.image.url + '" class="lower-message__image" >
+                    </div>
+                  </div>`
     return html;
   };
 

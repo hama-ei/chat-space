@@ -75,34 +75,37 @@ var buildMessageHTML = function(message) {
   };
 
   var reloadMessages = function() {
-    //カスタムデータ属性を利用し、ブラザに表示されている最新メッセージのidを取得
-    last_message_id = $("section:last").data("id");
-    var url = location.href.replace('/messages','')+'/api/messages';
-      $.ajax({
-      //ルーティングで設定した通りのURLを指定
-      url: url,
-      //ルーティングで設定した通りhttpメソッドをgetに指定
-      type: 'get',
-      dataType: 'json',
-      //dataオプションでリクエストに値を含める
-      data: {id: last_message_id}
-    })
-    .done(function(messages) {
-      //追加するHTMLの入れ物を作る
-      var insertHTML = '';
-      //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-      messages.forEach(function(message) {
-        insertHTML += buildHTML(message);
+    if (location.pathname.match('/\/groups\/\d+\/messages/')) {
+      //カスタムデータ属性を利用し、ブラザに表示されている最新メッセージのidを取得
+      last_message_id = $("section:last").data("id");
+      var url = location.href.replace('/messages','')+'/api/messages';
+
+        $.ajax({
+        //ルーティングで設定した通りのURLを指定
+        url: url,
+        //ルーティングで設定した通りhttpメソッドをgetに指定
+        type: 'get',
+        dataType: 'json',
+        //dataオプションでリクエストに値を含める
+        data: {id: last_message_id}
+      })
+      .done(function(messages) {
+        //追加するHTMLの入れ物を作る
+        var insertHTML = '';
+        //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+        messages.forEach(function(message) {
+          insertHTML += buildHTML(message);
+        });
+        //メッセージが入ったHTMLを取得
+        $('.messages').append(insertHTML);
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
+        //メッセージを追加
+      })
+      .fail(function() {
+        alert('error');
       });
-      //メッセージが入ったHTMLを取得
-      $('.messages').append(insertHTML);
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
-      //メッセージを追加
-    })
-    .fail(function() {
-      alert('error');
-    });
-  };
+    };
+  }
   setInterval(reloadMessages, 5000);
 });
 

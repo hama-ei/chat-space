@@ -81,5 +81,4 @@ group :development do
   gem 'spring'
 end
 gem 'carrierwave'
-gem 'fog-aws
-'
+gem 'fog-aws'

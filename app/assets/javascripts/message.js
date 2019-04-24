@@ -9,17 +9,18 @@ $(function(){
                       <div class='message__upper-info__talker'>
                         ${message.user_name}
                       </div>
-                    <div class='message__upper-info__date'>
-                      ${message.created_at}
+                      <div class='message__upper-info__date'>
+                        ${message.created_at}
+                      </div>
                     </div>
-                  </div>
-                  <div class='message__text'>
-                    <p class='lower-message__content'>
-                      ${content}
-                    </p>
-                    <p class='lower-message__image'>
-                      ${image}
-                    </p>
+                    <div class='message__text'>
+                      <p class='lower-message__content'>
+                        ${content}
+                      </p>
+                      <p class='lower-message__image'>
+                        ${image}
+                      </p>
+                    </div>
                   </section>
                 </div>`
     return html;
@@ -50,9 +51,9 @@ $(function(){
     })
   })
 
-var buildMessageHTML = function(message) {
-  var content = message.content ? `${ message.content }` : "";
-  var image = message.image.url ? `<img src= ${ message.image.url }>` : "";
+  var buildMessageHTML = function(message) {
+    var content = message.content ? `${ message.content }` : "";
+    var image = message.image.url ? `<img src= ${ message.image.url }>` : "";
 
       //data-idが反映されるようにしている
       var html = `<div class="message" data-id='message.id'>
@@ -71,7 +72,7 @@ var buildMessageHTML = function(message) {
                       <img src="' + message.image.url + '" class="lower-message__image" >
                     </div>
                   </div>`
-    return html;
+      return html;
   };
 
   var reloadMessages = function() {

@@ -67,7 +67,7 @@ $(function(){
                     </div>
                     <div class="lower-message">'
                       <p class="lower-message__content">
-                         message.content
+                        message.content
                        </p>
                       <img src="' + message.image.url + '" class="lower-message__image" >
                     </div>

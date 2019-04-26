@@ -76,11 +76,10 @@ $(function(){
   };
 
   var reloadMessages = function() {
-    if (location.pathname.match('/\/groups\/\d+\/messages/')) {
+    if (location.pathname.match(/\/groups\/\d+\/messages/)) {
       //カスタムデータ属性を利用し、ブラザに表示されている最新メッセージのidを取得
       last_message_id = $("section:last").data("id");
       var url = location.href.replace('/messages','')+'/api/messages';
-
         $.ajax({
         //ルーティングで設定した通りのURLを指定
         url: url,
